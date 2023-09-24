@@ -3,6 +3,17 @@ from rest_framework import serializers
 from .models import Author
 
 
+# class AuthorSerializer(serializers.ModelSerializer):
+#     book_names = serializers.ListSerializer(child=serializers.CharField())
+#     class Meta:
+#         model = Author
+#         fields = [
+#             "id",
+#             "first_name",
+#             "last_name",
+#             "book_names"
+#         ]
+
 class AuthorSerializer(serializers.ModelSerializer):
     book_names = serializers.SerializerMethodField()
     class Meta:
